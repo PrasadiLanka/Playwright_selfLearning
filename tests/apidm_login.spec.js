@@ -9,4 +9,9 @@ test('test', async ({ page }) => {
   await page.getByRole('textbox', { name: '********' }).fill('12345678');
   await page.getByRole('checkbox', { name: 'Remember me' }).check();
   await page.getByRole('button', { name: 'Login account' }).click();
+  const imageName = await page.getByAltText('admin');
+  await expect(imageName).toBeVisible();
+
+  console.log("login successful");
+
 });
