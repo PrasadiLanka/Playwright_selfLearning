@@ -35,9 +35,11 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+       use: { ...devices['Desktop Chrome']},
+      
     },
 
     {
@@ -49,6 +51,36 @@ export default defineConfig({
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
+
+    // {
+    //   name: 'chromium',
+    //   use: {
+    //     browserName: 'chromium',
+    //     viewport: {width:1440,height:900},              // maximize
+    //     headless: false,            // optional: show browser
+    //     launchOptions: {
+    //       args:["--start-fullscreen"]
+    //     }
+    //   },
+    // },
+    // {
+    //   name: 'firefox',
+    //   use: {
+    //     browserName: 'firefox',
+    //     viewport: null,
+    //     headless: false,
+    //   },
+    // },
+    // {
+    //   name: 'webkit',
+    //   use: {
+    //     browserName: 'webkit',
+    //     viewport: null,
+    //     headless: false,
+    //   },
+    // },
+
+  
 
     /* Test against mobile viewports. */
     // {
