@@ -52,6 +52,9 @@ export default defineConfig({
       use: { ...devices['Desktop Safari'] },
     },
 
+    
+
+
     // {
     //   name: 'chromium',
     //   use: {

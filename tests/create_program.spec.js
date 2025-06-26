@@ -8,9 +8,9 @@ test('create program', async ({ page }) => {
   await page.getByRole('link', { name: 'Programs ' }).click();
   await page.getByRole('link', { name: 'Start New Program' }).click();
   await page.getByRole('textbox', { name: 'Program Name' }).click();
-  await page.getByRole('textbox', { name: 'Program Name' }).fill('Human Resources');
+  await page.getByRole('textbox', { name: 'Program Name' }).fill('Software Engineering');
   await page.getByRole('textbox', { name: 'Nick Name' }).click();
-  await page.getByRole('textbox', { name: 'Nick Name' }).fill('HR');
+  await page.getByRole('textbox', { name: 'Nick Name' }).fill('SE');
   await page.getByRole('link', { name: 'Upload From Media' }).click();
 
   await page.getByRole('link', { name: 'Upload Media' }).click();

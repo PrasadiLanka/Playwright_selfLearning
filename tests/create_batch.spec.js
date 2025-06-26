@@ -1,16 +1,16 @@
 import { test, expect } from '@playwright/test';
 import {login} from '../utils/sucess_login.spec';
 
-test('batch_create_successfully', async ({ page }) => { 
+test.only('batch_create_successfully', async ({ page }) => { 
 
   await login(page);
 
-  await page.getByRole('link', { name: 'Batch ' }).click();
-  await page.getByRole('link', { name: 'Create Batch' }).click();
+  await page.getByRole('link', { name: 'Batch' }).click();
+  await page.getByRole('link', { name: 'Create Batch' }).click();
   await page.locator('#val-program').selectOption('12');
   await page.getByRole('textbox', { name: 'Batch' }).click();
-  await page.getByRole('textbox', { name: 'Batch' }).fill('A25-01');
-  await page.getByRole('textbox', { name: 'Start Date' }).fill('2025-07-10');
+  await page.getByRole('textbox', { name: 'Batch' }).fill('A25-02');
+  await page.getByRole('textbox', { name: 'Start Date' }).fill('2025-07-11');
   await page.getByRole('textbox', { name: 'End Date' }).fill('2028-01-01');
   await page.getByRole('textbox', { name: 'Duration' }).click();
   await page.getByRole('textbox', { name: 'Duration' }).fill('36');
@@ -187,7 +187,7 @@ test('same_batch_start_date', async ({ page }) => {
 
 });
 
-test.only('required_fields', async ({ page }) => { 
+test('required_fields', async ({ page }) => { 
 
   await login(page);
 
