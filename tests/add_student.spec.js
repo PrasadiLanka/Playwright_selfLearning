@@ -27,23 +27,6 @@ async function addStudent(page, firstName, lastName, email, phoneNumber, clickSt
 
 }
 
-  // async function fillPersonalDetails(page) {
-  //   await page.getByRole('tab', { name: 'Personal' }).click();
-  //   await page.getByPlaceholder('Date of Birth').fill('1999-03-27');
-  //   await page.locator('#select2-gender-container').click();
-  //   await page.getByRole('treeitem', { name: 'Female' }).click();
-  //   await page.getByRole('textbox', { name: 'NIC / Passport' }).fill('995876051V');
-  //   await page.getByRole('textbox', { name: 'Nationality' }).fill('sinhala');
-  //   await page.getByRole('textbox', { name: 'Certificate Name' }).fill('ISTQB');
-  //   await page.getByRole('textbox', { name: 'Full Name' }).fill('Lanka Prasadini');
-  //   await page.getByRole('textbox', { name: 'Address' }).fill('kahatapitiya, Batapola');
-  //   await page.getByRole('textbox', { name: 'City' }).fill('Ambalangoda');
-  //   await page.getByRole('textbox', { name: 'Postal/ZIP Code' }).fill('12345');
-  //   await page.getByRole('combobox', { name: 'Sri Lanka' }).locator('span').nth(2).click();
-  //   await page.getByRole('treeitem', { name: 'Sri Lanka' }).locator('span').click();
-  //   await page.getByRole('button', { name: 'Save Details' }).click();
-  // }
-
   async function fillPersonalDetails(page, Birth, NIC, Nationality, Certificate, FullName, Address, City, Postal) {
     await page.getByRole('tab', { name: 'Personal' }).click();
     await page.getByPlaceholder('Date of Birth').fill(Birth);
@@ -93,14 +76,20 @@ test('test', async ({ page }) => {
   await login(page);
 
   // Add first student
-  await addStudent(page, 'Lanka-62', 'Prasadini-62', 'lanka+62@thesanmark.com', '1234567890', true);
+  await addStudent(page, 'Lanka-63', 'Prasadini-63', 'lanka+70@thesanmark.com', '1234567890', true);
   await fillPersonalDetails(page, '1999-03-27', '995876051V', 'Sinhala', 'ISTQB', 'Lanka Prasadini', 'Kahatapitiya, Batapola', 'Ambalangoda', '12345');
   await fillWorkAndEducationDetails(page, 'Engineer','IT', 'Sanmark', 'QA Engineer', 'Degree Holder', 'Degree', 'Biology','4', 'science', 'bio', 'che', 'phy'  );
   await fillUploads(page);
   
-  // // Add second student
-  // await addStudent(page, 'Lanka-51', 'Prasadini-51', 'lanka+51@thesanmark.com', '1234567890');
+  // Add second student
+  await addStudent(page, 'Lanka-64', 'Prasadini-64', 'lanka+71@thesanmark.com', '1234567890');
+  await fillPersonalDetails(page, '1999-03-27', '995876051V', 'Sinhala', 'ISTQB', 'Lanka Prasadini', 'Kahatapitiya, Batapola', 'Ambalangoda', '12345');
+  await fillWorkAndEducationDetails(page, 'Engineer','IT', 'Sanmark', 'QA Engineer', 'Degree Holder', 'Degree', 'Biology','4', 'science', 'bio', 'che', 'phy'  );
+  await fillUploads(page);
   
-  // // Add third student
-  // await addStudent(page, 'Lanka-52', 'Prasadini-52', 'lanka+52@thesanmark.com', '1234567890');
+  // Add third student
+  await addStudent(page, 'Lanka-65', 'Prasadini-65', 'lanka+75@thesanmark.com', '1234567890');
+  await fillPersonalDetails(page, '1999-03-27', '995876051V', 'Sinhala', 'ISTQB', 'Lanka Prasadini', 'Kahatapitiya, Batapola', 'Ambalangoda', '12345');
+  await fillWorkAndEducationDetails(page, 'Engineer','IT', 'Sanmark', 'QA Engineer', 'Degree Holder', 'Degree', 'Biology','4', 'science', 'bio', 'che', 'phy'  );
+  await fillUploads(page);
 });
